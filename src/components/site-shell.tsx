@@ -33,7 +33,7 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
 
             <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3">
               <Link
-                href="mailto:contact@gnomespoitevins.fr"
+                href="mailto:gnomespoitevins@gmail.com"
                 className="inline-flex h-10 items-center justify-center whitespace-nowrap rounded-md border border-[var(--gold)] bg-[var(--gold)] px-2 text-xs font-semibold text-[var(--ink)] shadow transition-colors hover:bg-[var(--sand)] sm:h-11 sm:px-4 sm:text-sm"
               >
                 Contact
@@ -51,7 +51,7 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
             <div>
               <div className="medieval-title text-sm tracking-wide text-[var(--sand)]">Gnomespoitevins</div>
               <div className="text-xs text-[var(--parchment)]/90">Association ludique et creative</div>
-              <div className="text-xs text-[var(--parchment)]/90">contact@gnomespoitevins.fr</div>
+              <div className="text-xs text-[var(--parchment)]/90">gnomespoitevins@gmail.com</div>
             </div>
             <div className="h-14 w-40 overflow-hidden rounded-md border border-[var(--gold)] bg-black/30 shadow sm:h-16 sm:w-44">
               <Image
