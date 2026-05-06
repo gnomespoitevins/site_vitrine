@@ -81,6 +81,13 @@
   --sidebar-accent-foreground: oklch(0.3 0.02 242);
   --sidebar-border: oklch(0.88 0.01 92);
   --sidebar-ring: oklch(0.7 0.04 230);
+  --brown: #6e5e52;
+  --gold: #c5b8a7;
+  --sand: #ebe5dd;
+  --forest: #6f8576;
+  --parchment: #f6f2eb;
+  --ink: #2f2b28;
+  --ink-soft: #4f4a46;
 }
 
 .dark {
@@ -132,4 +139,49 @@
   html {
     @apply font-sans;
   }
+  button,
+  a,
+  summary,
+  label[for],
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  [role="button"] {
+    cursor: pointer;
+  }
+}
+
+.parchment-card {
+  background-color: var(--parchment);
+  border: 1px solid color-mix(in oklab, var(--gold) 75%, white);
+  box-shadow: 0 18px 40px rgba(17, 24, 39, 0.14);
+  border-radius: 0.75rem;
+}
+
+.parchment-section {
+  background-color: color-mix(in oklab, var(--parchment) 90%, white);
+  border: 1px solid color-mix(in oklab, var(--gold) 65%, white);
+  border-radius: 1rem;
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--brown);
+  border-radius: 9999px;
+}
+
+.medieval-title {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: 0.06em;
 }

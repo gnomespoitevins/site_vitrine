@@ -1,97 +1,125 @@
-import Image from "next/image";
 import Link from "next/link";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { buttonVariants } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
+import Image from "next/image";
+import Carousel from "@/components/carousel";
+import PageContainer from "@/components/page-container";
+import SectionDivider from "@/components/section-divider";
 
 export default function Home() {
-  const activities = [
+  const homeItems = [
     {
-      title: "Jeux narratifs",
-      text: "Sessions conviviales de jeux de role et de plateaux dans un cadre accessible a tous.",
+      src: "/gallery-1.svg",
+      alt: "Scene associative 1",
     },
     {
-      title: "Ateliers creatifs",
-      text: "Peinture de figurines, creation de decors et partage de techniques au rythme de chacun.",
+      src: "/gallery-2.svg",
+      alt: "Scene associative 2",
     },
     {
-      title: "Evenements associatifs",
-      text: "Rencontres ponctuelles pour faire decouvrir l'univers et accueillir de nouveaux membres.",
+      src: "/gallery-3.svg",
+      alt: "Scene associative 3",
+    },
+    {
+      src: "/gallery-4.svg",
+      alt: "Scene associative 4",
+    },
+    {
+      src: "/gallery-5.svg",
+      alt: "Scene associative 5",
     },
   ];
 
   return (
-    <div className="flex flex-1 justify-center px-4 py-10 sm:px-8">
-      <main className="w-full max-w-5xl space-y-10 rounded-3xl border bg-card/90 p-6 shadow-sm sm:p-10">
-        <section className="grid gap-6 md:grid-cols-[auto_1fr] md:items-center">
-          <div className="mx-auto md:mx-0">
-            <Image
-              src="/logo-gnomes-vitrine.svg"
-              alt="Logo Gnomespoitevins"
-              width={140}
-              height={140}
-              priority
-            />
+    <PageContainer title="Laissez-vous porter par l'imaginaire">
+      <section className="parchment-section p-5 sm:p-7">
+        <div className="grid gap-4 md:grid-cols-[160px_1fr] md:items-center">
+          <div className="mx-auto">
+            <Image src="/logo-gnomes-vitrine.svg" alt="Logo Gnomespoitevins" width={140} height={140} priority />
           </div>
-          <div className="space-y-4 text-center md:text-left">
-            <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">
-              Association ludique
+          <div>
+            <h2 className="mb-3 text-xl font-semibold text-[var(--forest)]">Association ludique a Poitiers</h2>
+            <p className="mb-3 text-sm leading-relaxed text-[var(--ink-soft)]">
+              Nous rassemblons passionnes et curieux autour du jeu narratif, de la creation
+              et des rencontres conviviales. Cette vitrine reprend l identite visuelle
+              historique du projet, dans une version simplifiee.
             </p>
-            <h1 className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-              Gnomespoitevins
-            </h1>
-            <p className="max-w-2xl text-base leading-relaxed text-muted-foreground">
-              Une vitrine epuree pour presenter nos activites, notre esprit associatif et
-              nos prochains rendez-vous.
+            <p className="text-sm leading-relaxed text-[var(--ink-soft)]">
+              Decouvrez nos activites principales et suivez nos prochaines dates.
             </p>
-            <div className="flex flex-wrap justify-center gap-3 md:justify-start">
+            <div className="mt-4 flex flex-wrap gap-3">
               <Link
-                className={buttonVariants({ variant: "default" })}
-                href="https://www.instagram.com"
+                href="https://www.facebook.com/GnomesEtAssocies?locale=fr_FR"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="inline-flex h-10 items-center justify-center rounded-md border border-[var(--gold)] bg-[var(--gold)] px-4 text-sm font-semibold text-[var(--ink)] shadow transition-colors hover:bg-[var(--sand)]"
               >
                 Nous suivre
               </Link>
-              <Link className={buttonVariants({ variant: "secondary" })} href="mailto:contact@gnomespoitevins.fr">
+              <Link
+                href="mailto:contact@gnomespoitevins.fr"
+                className="inline-flex h-10 items-center justify-center rounded-md border border-[var(--forest)]/40 bg-[var(--forest)]/10 px-4 text-sm font-semibold text-[var(--forest)] transition-colors hover:bg-[var(--forest)]/20"
+              >
                 Nous contacter
               </Link>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <Separator />
+      <SectionDivider />
 
-        <section className="space-y-4">
-          <h2 className="text-2xl font-semibold tracking-tight">Nos activites</h2>
-          <div className="grid gap-4 md:grid-cols-3">
-            {activities.map((activity) => (
-              <Card key={activity.title} className="border-border/80 bg-background/80">
-                <CardHeader>
-                  <CardTitle className="text-lg">{activity.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm leading-relaxed text-muted-foreground">{activity.text}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
+      <section className="parchment-card p-5 sm:p-6">
+        <h2 className="mb-4 text-lg font-semibold text-[var(--forest)]">Nos activites</h2>
+        <div className="grid gap-4 md:grid-cols-3">
+          {[
+            {
+              title: "Jeux de role",
+              text: "Scenarios immersifs, sessions sur table et univers partages.",
+              image: "/gallery-1.svg",
+            },
+            {
+              title: "Ateliers creatifs",
+              text: "Peinture, decors et fabrication pour faire vivre les mondes de jeu.",
+              image: "/gallery-2.svg",
+            },
+            {
+              title: "Evenements",
+              text: "Rencontres associatives, initiations et temps forts communautaires.",
+              image: "/gallery-3.svg",
+            },
+          ].map((item) => (
+            <article
+              key={item.title}
+              className="group flex flex-col overflow-hidden rounded-xl border border-[var(--forest)]/25 bg-[var(--parchment)] shadow"
+            >
+              <div className="h-28 overflow-hidden bg-[var(--brown)]/60">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  width={400}
+                  height={160}
+                />
+              </div>
+              <div className="p-3">
+                <h3 className="mb-1 text-sm font-semibold text-[var(--forest)]">{item.title}</h3>
+                <p className="text-xs text-[var(--ink-soft)]">{item.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
 
-        <Separator />
+      <SectionDivider />
 
-        <section className="space-y-2">
-          <h2 className="text-2xl font-semibold tracking-tight">Informations pratiques</h2>
-          <p className="text-sm leading-relaxed text-muted-foreground">
-            Rencontres regulieres sur la metropole, sessions ouvertes sur inscription et
-            communication des prochaines dates via reseaux sociaux.
-          </p>
-          <p className="text-sm leading-relaxed text-muted-foreground">
-            Cette version reste volontairement simple: une seule page accueil, sans espace
-            profil ni administration.
-          </p>
-        </section>
-      </main>
-    </div>
+      <section className="parchment-section p-5 sm:p-7">
+        <h2 className="mb-3 text-xl font-semibold text-[var(--forest)]">Informations pratiques</h2>
+        <p className="text-sm leading-relaxed text-[var(--ink-soft)]">
+          Activites regulieres, accueil des nouveaux participants et communication via reseaux
+          sociaux. Cette version reste volontairement concentree sur la page accueil.
+        </p>
+      </section>
+
+      <Carousel title="Ambiance de l'association" items={homeItems} />
+    </PageContainer>
   );
 }
