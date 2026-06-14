@@ -11,9 +11,9 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
               <Link href="/" className="flex items-center gap-3">
                 <div className="h-14 w-32 overflow-hidden rounded-md border border-[var(--gold)] bg-[var(--brown)] shadow-md sm:h-16 sm:w-44 md:h-20 md:w-60">
                   <Image
-                    src="/logo-gnomes-vitrine.svg"
+                    src="/logo-gnomes-poitevins.jpg"
                     alt="Logo Gnomespoitevins"
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-contain"
                     width={240}
                     height={80}
                     priority
@@ -55,9 +55,9 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
             </div>
             <div className="h-14 w-40 overflow-hidden rounded-md border border-[var(--gold)] bg-black/30 shadow sm:h-16 sm:w-44">
               <Image
-                src="/logo-gnomes-vitrine.svg"
+                src="/logo-gnomes-poitevins.jpg"
                 alt="Logo Gnomespoitevins"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-contain"
                 width={176}
                 height={64}
               />

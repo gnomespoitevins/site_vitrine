@@ -6,26 +6,12 @@ import SectionDivider from "@/components/section-divider";
 
 export default function Home() {
   const homeItems = [
-    {
-      src: "/gallery-1.svg",
-      alt: "Scene associative 1",
-    },
-    {
-      src: "/gallery-2.svg",
-      alt: "Scene associative 2",
-    },
-    {
-      src: "/gallery-3.svg",
-      alt: "Scene associative 3",
-    },
-    {
-      src: "/gallery-4.svg",
-      alt: "Scene associative 4",
-    },
-    {
-      src: "/gallery-5.svg",
-      alt: "Scene associative 5",
-    },
+    { src: "/Images/trollball/1.jpg", alt: "Entrainement trollball 1" },
+    { src: "/Images/trollball/2.jpg", alt: "Entrainement trollball 2" },
+    { src: "/Images/trollball/3.jpg", alt: "Entrainement trollball 3" },
+    { src: "/Images/trollball/4.jpg", alt: "Entrainement trollball 4" },
+    { src: "/Images/trollball/5.jpg", alt: "Entrainement trollball 5" },
+    { src: "/Images/evenement/1.jpg", alt: "Article de presse Les Gnomes poitevins" },
   ];
 
   return (
@@ -33,7 +19,7 @@ export default function Home() {
       <section className="parchment-section p-5 sm:p-7">
         <div className="grid gap-4 md:grid-cols-[160px_1fr] md:items-center">
           <div className="mx-auto">
-            <Image src="/logo-gnomes-vitrine.svg" alt="Logo Gnomespoitevins" width={140} height={140} priority />
+            <Image src="/logo-gnomes-poitevins.jpg" alt="Logo Gnomespoitevins" width={140} height={140} priority className="rounded-lg" />
           </div>
           <div>
             <h2 className="mb-3 text-xl font-semibold text-[var(--forest)]">Association ludique a Poitiers</h2>
@@ -73,14 +59,14 @@ export default function Home() {
         <div className="grid gap-4 md:grid-cols-2">
           {[
             {
-              title: "Jeux de role",
-              text: "Scenarios immersifs, sessions sur table et univers partages.",
-              image: "/gallery-1.svg",
+              title: "Trollball",
+              text: "Escrime ludique en equipe melant tactique, deplacement et ambiance medievale.",
+              image: "/Images/trollball/2.jpg",
             },
             {
               title: "Evenements",
               text: "Rencontres associatives, initiations et temps forts communautaires.",
-              image: "/gallery-3.svg",
+              image: "/Images/evenement/1.jpg",
             },
           ].map((item) => (
             <article
