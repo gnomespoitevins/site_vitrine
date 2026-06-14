@@ -1,17 +1,38 @@
 import Link from "next/link";
 import Image from "next/image";
+import ActivityCards from "@/components/activity-cards";
 import Carousel from "@/components/carousel";
 import PageContainer from "@/components/page-container";
 import SectionDivider from "@/components/section-divider";
 
+const FACEBOOK_GROUP_URL = "https://www.facebook.com/groups/1444231562442494?locale=fr_FR";
+
 export default function Home() {
   const homeItems = [
-    { src: "/Images/trollball/1.jpg", alt: "Entrainement trollball 1" },
-    { src: "/Images/trollball/2.jpg", alt: "Entrainement trollball 2" },
-    { src: "/Images/trollball/3.jpg", alt: "Entrainement trollball 3" },
-    { src: "/Images/trollball/4.jpg", alt: "Entrainement trollball 4" },
-    { src: "/Images/trollball/5.jpg", alt: "Entrainement trollball 5" },
-    { src: "/Images/evenement/1.jpg", alt: "Article de presse Les Gnomes poitevins" },
+    { src: "/Images/trollball/1.jpg", alt: "Entraînement trollball 1" },
+    { src: "/Images/trollball/2.jpg", alt: "Entraînement trollball 2" },
+    { src: "/Images/trollball/3.jpg", alt: "Entraînement trollball 3" },
+    { src: "/Images/trollball/4.jpg", alt: "Entraînement trollball 4" },
+    { src: "/Images/trollball/5.jpg", alt: "Entraînement trollball 5" },
+    {
+      src: "/Images/evenement/1.jpg",
+      alt: "Article de presse Les Gnomes poitevins",
+      rotateLeft: true,
+    },
+  ];
+
+  const activityItems = [
+    {
+      title: "Trollball",
+      text: "Escrime ludique en équipe mêlant tactique, déplacement et ambiance médiévale.",
+      image: "/Images/trollball/2.jpg",
+    },
+    {
+      title: "Événements",
+      text: "Rencontres associatives, initiations et temps forts communautaires.",
+      image: "/Images/evenement/1.jpg",
+      rotateLeft: true,
+    },
   ];
 
   return (
@@ -22,19 +43,19 @@ export default function Home() {
             <Image src="/logo-gnomes-poitevins.jpg" alt="Logo Gnomespoitevins" width={140} height={140} priority className="rounded-lg" />
           </div>
           <div>
-            <h2 className="mb-3 text-xl font-semibold text-[var(--forest)]">Association ludique a Poitiers</h2>
+            <h2 className="mb-3 text-xl font-semibold text-[var(--forest)]">Association ludique à Poitiers</h2>
             <p className="mb-3 text-sm leading-relaxed text-[var(--ink-soft)]">
-              Notre association pratique le trollball, une forme d escrime ludique en equipe
-              melant tactique, deplacement et jeu de role grandeur nature dans une ambiance
-              medievale et conviviale.
+              Notre association pratique le trollball, une forme d&apos;escrime ludique en équipe
+              mêlant tactique, déplacement et jeu de rôle grandeur nature dans une ambiance
+              médiévale et conviviale.
             </p>
             <p className="text-sm leading-relaxed text-[var(--ink-soft)]">
-              Nous participons regulierement a des evenements et pouvons proposer des
-              animations d escrime ludique pour faire decouvrir la discipline.
+              Nous participons régulièrement à des événements et pouvons proposer des
+              animations d&apos;escrime ludique pour faire découvrir la discipline.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <Link
-                href="https://www.facebook.com/GnomesEtAssocies?locale=fr_FR"
+                href={FACEBOOK_GROUP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex h-10 items-center justify-center rounded-md border border-[var(--gold)] bg-[var(--gold)] px-4 text-sm font-semibold text-[var(--ink)] shadow transition-colors hover:bg-[var(--sand)]"
@@ -55,40 +76,8 @@ export default function Home() {
       <SectionDivider />
 
       <section className="parchment-card p-5 sm:p-6">
-        <h2 className="mb-4 text-lg font-semibold text-[var(--forest)]">Nos activites</h2>
-        <div className="grid gap-4 md:grid-cols-2">
-          {[
-            {
-              title: "Trollball",
-              text: "Escrime ludique en equipe melant tactique, deplacement et ambiance medievale.",
-              image: "/Images/trollball/2.jpg",
-            },
-            {
-              title: "Evenements",
-              text: "Rencontres associatives, initiations et temps forts communautaires.",
-              image: "/Images/evenement/1.jpg",
-            },
-          ].map((item) => (
-            <article
-              key={item.title}
-              className="group flex flex-col overflow-hidden rounded-xl border border-[var(--forest)]/25 bg-[var(--parchment)] shadow"
-            >
-              <div className="h-28 overflow-hidden bg-[var(--brown)]/60">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  width={400}
-                  height={160}
-                />
-              </div>
-              <div className="p-3">
-                <h3 className="mb-1 text-sm font-semibold text-[var(--forest)]">{item.title}</h3>
-                <p className="text-xs text-[var(--ink-soft)]">{item.text}</p>
-              </div>
-            </article>
-          ))}
-        </div>
+        <h2 className="mb-4 text-lg font-semibold text-[var(--forest)]">Nos activités</h2>
+        <ActivityCards items={activityItems} />
       </section>
 
       <Carousel title="Ambiance de l'association" items={homeItems} />

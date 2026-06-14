@@ -1,11 +1,13 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Image from "next/image";
+import ImageLightbox from "@/components/image-lightbox";
+import SiteImage, { siteImageClasses } from "@/components/site-image";
 
 export interface CarouselItem {
   src: string;
   alt: string;
+  rotateLeft?: boolean;
 }
 
 export default function Carousel({
@@ -53,12 +55,12 @@ export default function Carousel({
                 className="relative block h-full w-full"
                 aria-label={`Agrandir ${item.alt}`}
               >
-                <Image
+                <SiteImage
                   src={item.src}
                   alt={item.alt}
-                  className="h-full w-full object-cover opacity-90 transition-transform duration-300 hover:scale-105"
                   fill
                   sizes="(max-width: 640px) 40vw, 20vw"
+                  className={`${siteImageClasses(item.rotateLeft)} opacity-90 transition-transform duration-300 hover:scale-105`}
                 />
               </button>
             </figure>
@@ -74,20 +76,12 @@ export default function Carousel({
         </button>
       </div>
       {selectedItem ? (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4" onClick={() => setSelectedItem(null)}>
-          <div className="relative w-full max-w-5xl overflow-hidden rounded-lg border border-[var(--brown)] bg-[var(--parchment)] p-2" onClick={(event) => event.stopPropagation()}>
-            <button
-              type="button"
-              onClick={() => setSelectedItem(null)}
-              className="absolute right-3 top-3 z-10 rounded-md border border-[var(--brown)] bg-[var(--brown)] px-2 py-1 text-xs font-bold text-[var(--parchment)] hover:bg-[var(--forest)]"
-            >
-              Fermer
-            </button>
-            <div className="relative h-[70vh] w-full">
-              <Image src={selectedItem.src} alt={selectedItem.alt} fill sizes="100vw" className="object-contain" />
-            </div>
-          </div>
-        </div>
+        <ImageLightbox
+          src={selectedItem.src}
+          alt={selectedItem.alt}
+          rotateLeft={selectedItem.rotateLeft}
+          onClose={() => setSelectedItem(null)}
+        />
       ) : null}
     </section>
   );
