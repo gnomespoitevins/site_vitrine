@@ -1,11 +1,24 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import ActivityCards from "@/components/activity-cards";
 import Carousel from "@/components/carousel";
 import PageContainer from "@/components/page-container";
 import SectionDivider from "@/components/section-divider";
+import { siteConfig } from "@/lib/site-config";
 
-const FACEBOOK_GROUP_URL = "https://www.facebook.com/groups/1444231562442494?locale=fr_FR";
+export const metadata: Metadata = {
+  title: "Accueil",
+  description: siteConfig.description,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: `${siteConfig.fullName} | Trollball et escrime ludique à Poitiers`,
+    description: siteConfig.description,
+    url: "/",
+  },
+};
 
 export default function Home() {
   const homeItems = [
@@ -55,7 +68,7 @@ export default function Home() {
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <Link
-                href={FACEBOOK_GROUP_URL}
+                href={siteConfig.facebookGroupUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex h-10 items-center justify-center rounded-md border border-[var(--gold)] bg-[var(--gold)] px-4 text-sm font-semibold text-[var(--ink)] shadow transition-colors hover:bg-[var(--sand)]"
