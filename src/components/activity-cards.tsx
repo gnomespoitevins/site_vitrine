@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import ImageLightbox from "@/components/image-lightbox";
+import ZoomableImageLightbox from "@/components/zoomable-image-lightbox";
 import SiteImage, { siteImageClasses } from "@/components/site-image";
 
 type ActivityItem = {
@@ -44,7 +44,8 @@ export default function ActivityCards({ items }: { items: ActivityItem[] }) {
         ))}
       </div>
       {selected ? (
-        <ImageLightbox
+        <ZoomableImageLightbox
+          key={selected.image}
           src={selected.image}
           alt={selected.title}
           rotateLeft={selected.rotateLeft}

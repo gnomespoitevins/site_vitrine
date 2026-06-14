@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import ImageLightbox from "@/components/image-lightbox";
+import ZoomableImageLightbox from "@/components/zoomable-image-lightbox";
 import SiteImage, { siteImageClasses } from "@/components/site-image";
 
 export interface CarouselItem {
@@ -76,7 +76,8 @@ export default function Carousel({
         </button>
       </div>
       {selectedItem ? (
-        <ImageLightbox
+        <ZoomableImageLightbox
+          key={selectedItem.src}
           src={selectedItem.src}
           alt={selectedItem.alt}
           rotateLeft={selectedItem.rotateLeft}
