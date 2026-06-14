@@ -6,6 +6,14 @@ export const siteConfig = {
     "Association ludique à Poitiers spécialisée en trollball et escrime ludique. Initiations, entraînements et animations médiévales pour petits et grands.",
   email: "gnomespoitevins@gmail.com",
   facebookGroupUrl: "https://www.facebook.com/groups/1444231562442494?locale=fr_FR",
+  gnomesAssociesPartner: {
+    name: "Gnomes et Associés",
+    description:
+      "Association partenaire à Dunkerque autour du grandeur nature, de l'escrime ludique, des figurines, des jeux de rôle et des événements médiévaux fantastiques.",
+    logo: "/Images/partners/gnomes-et-associes.jpg",
+    facebookUrl: "https://www.facebook.com/GnomesEtAssocies?locale=fr_FR",
+    websiteUrl: "https://gnomesetassocies.vercel.app/",
+  },
   locale: "fr_FR",
   logoPath: "/logo-gnomes-poitevins.jpg",
   keywords: [

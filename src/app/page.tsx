@@ -94,6 +94,61 @@ export default function Home() {
       </section>
 
       <Carousel title="Ambiance de l'association" items={homeItems} />
+
+      <SectionDivider />
+
+      <section className="parchment-card p-5 sm:p-6">
+        <h2 className="mb-4 text-lg font-semibold text-[var(--forest)]">Les partenaires de l&apos;association</h2>
+        <article className="rounded-xl border border-[var(--gold)]/60 bg-[var(--parchment)] p-4 shadow-md">
+          <div className="mb-3 flex items-center gap-3">
+            <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-lg border border-[var(--gold)]/60 bg-white">
+              <Image
+                src={siteConfig.gnomesAssociesPartner.logo}
+                alt={siteConfig.gnomesAssociesPartner.name}
+                width={56}
+                height={56}
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <h3 className="text-base font-semibold text-[var(--brown)]">{siteConfig.gnomesAssociesPartner.name}</h3>
+          </div>
+          <p className="mb-4 text-sm leading-relaxed text-[var(--ink-soft)]">
+            {siteConfig.gnomesAssociesPartner.description}
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <a
+              href={siteConfig.gnomesAssociesPartner.facebookUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-md border border-[var(--brown)]/40 bg-white px-3 py-2 text-xs font-semibold text-[var(--brown)] transition hover:bg-[#f3e6c8]"
+            >
+              <Image
+                src={siteConfig.gnomesAssociesPartner.logo}
+                alt=""
+                width={16}
+                height={16}
+                className="rounded-sm object-cover"
+              />
+              Facebook
+            </a>
+            <a
+              href={siteConfig.gnomesAssociesPartner.websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-md border border-[var(--brown)]/40 bg-white px-3 py-2 text-xs font-semibold text-[var(--brown)] transition hover:bg-[#f3e6c8]"
+            >
+              <Image
+                src={siteConfig.gnomesAssociesPartner.logo}
+                alt=""
+                width={16}
+                height={16}
+                className="rounded-sm object-cover"
+              />
+              Site web
+            </a>
+          </div>
+        </article>
+      </section>
     </PageContainer>
   );
 }
