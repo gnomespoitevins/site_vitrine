@@ -88,6 +88,8 @@
   --parchment: #f8f0d9;
   --ink: #1f1a16;
   --ink-soft: #3f3329;
+  --link: #5b802d;
+  --link-hover: #7c4b1d;
 }
 
 .dark {
@@ -184,4 +186,16 @@
 .medieval-title {
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   letter-spacing: 0.06em;
+}
+
+.da-link {
+  font-weight: 500;
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+.da-link:hover {
+  color: var(--link-hover);
 }

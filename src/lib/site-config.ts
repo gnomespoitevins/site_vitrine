@@ -6,6 +6,11 @@ export const siteConfig = {
     "Association ludique à Poitiers spécialisée en trollball et escrime ludique. Initiations, entraînements et animations médiévales pour petits et grands.",
   email: "gnomespoitevins@gmail.com",
   facebookGroupUrl: "https://www.facebook.com/groups/1444231562442494?locale=fr_FR",
+  trollballSession: {
+    mapsUrl:
+      "https://www.google.com/maps/place/Gymnase+de+Montamisé/@46.6204665,0.427441,120m/data=!3m1!1e3!4m15!1m8!3m7!1s0x47fdba5368bb215d:0x405d39260e7a210!2s86360+Montamisé!3b1!8m2!3d46.620536!4d0.421398!16s%2Fm%2F03qhhl_!3m5!1s0x47fdbbbab59f6dd3:0xb9b56b22b0c46eb5!8m2!3d46.6207204!4d0.4274923!16s%2Fg%2F113h8h7tz?entry=ttu",
+    placeLabel: "gymnase de Montamisé",
+  },
   gnomesAssociesPartner: {
     name: "Gnomes et Associés",
     description:

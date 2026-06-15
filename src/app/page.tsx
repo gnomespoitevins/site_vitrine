@@ -65,6 +65,18 @@ export default function Home() {
             <p className="text-sm leading-relaxed text-[var(--ink-soft)]">
               Nous participons régulièrement à des événements et pouvons proposer des
               animations d&apos;escrime ludique pour faire découvrir la discipline.
+              <br />
+              <br />
+              Notre créneau de trollball a lieu le dimanche matin de 10h00 à 12h00 au{" "}
+              <a
+                href={siteConfig.trollballSession.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="da-link"
+              >
+                {siteConfig.trollballSession.placeLabel}
+              </a>
+              , en extérieur ou en intérieur suivant la météo.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <Link
